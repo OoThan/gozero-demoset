@@ -31,6 +31,7 @@ type (
 		FindOne(ctx context.Context, id uint64) (*Product, error)
 		Update(ctx context.Context, data *Product) error
 		Delete(ctx context.Context, id uint64) error
+		FindAll(ctx context.Context, page, size int64, search string) ([]*Product, error)
 	}
 
 	defaultProductModel struct {
@@ -99,6 +100,26 @@ func (m *defaultProductModel) Update(ctx context.Context, data *Product) error {
 		return conn.ExecCtx(ctx, query, data.Name, data.Desc, data.Stock, data.Amount, data.Status, data.Id)
 	}, productIdKey)
 	return err
+}
+
+func (m *defaultProductModel) FindAll(ctx context.Context, page, size int64, search string) (resp []*Product, err error) {
+	query := fmt.Sprintf("select * from %s", m.table)
+	if search != "" {
+		query += " where name = ? order by id desc limit ?,?"
+		err = m.QueryRowsNoCache(&resp, query, search, page, size)
+	} else {
+		query += " order by id desc limit ?,?"
+		err = m.QueryRowsNoCache(&resp, query, search, page, size)
+	}
+
+	switch err {
+	case nil:
+		return resp, nil
+	case sqlc.ErrNotFound:
+		return nil, ErrNotFound
+	default:
+		return nil, err
+	}
 }
 
 func (m *defaultProductModel) formatPrimary(primary interface{}) string {
