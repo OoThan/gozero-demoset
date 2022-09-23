@@ -1,0 +1,83 @@
+syntax = "v1"
+
+info(
+	title: "Common Service"
+	desc: "Common Service"
+	author: "maroo"
+	email: "maroo@gmail.com"
+	version: "1.0"
+)
+
+type (
+	// product create
+	CreateRequest {
+		Name   string `json:"name"`
+		Desc   string `json:"desc"`
+		Stock  uint64 `json:"stock"`
+		Amount uint64 `json:"amount"`
+		Status uint64 `json:"status"`
+	}
+	CreateResponse {
+		Id uint64 `json:"id"`
+	}
+
+	// product update
+	UpdateRequest {
+		Id     uint64 `json:"id"`
+		Name   string `json:"name,optional"`
+		Desc   string `json:"desc,optional"`
+		Stock  uint64 `json:"stock"`
+		Amount uint64 `json:"amount,optional"`
+		Status uint   `json:"status,optional"`
+	}
+	UpdateResponse struct{}
+
+	// product remove
+	RemoveRequest {
+		Id uint64 `json:"id"`
+	}
+	RemoveResponse struct{}
+
+	// product detail
+	DetailRequest {
+		Id uint64 `json:"id"`
+	}
+	DetailResponse {
+		Id     uint64 `json:"id"`
+		Name   string `json:"name"`
+		Desc   string `json:"desc"`
+		Stock  uint64 `json:"stock"`
+		Amount uint64 `json:"amount"`
+		Status uint64 `json:"status"`
+	}
+
+	// porduct list
+	ListRequest {
+		Page int64  `json:"page"`
+		Size int64  `json:"size"`
+		Name string `json:"name"`
+	}
+	ListResponse {
+		List []DetailResponse `json:"list"`
+	}
+)
+
+@server (
+	jwt: Auth
+)
+service Product {
+	@handler Create
+	post /api/product/create (CreateRequest) returns (CreateResponse)
+	
+	@handler Update
+	post /api/product/update (UpdateRequest) returns (UpdateResponse)
+	
+	@handler Remove
+	post /api/product/remove (RemoveRequest) returns (RemoveResponse)
+	
+	@handler Detail
+	get /api/product/detail (DetailRequest) returns (DetailResponse)
+	
+	@handler List
+	get /api/product/list (ListRequest) returns (ListResponse)
+}
