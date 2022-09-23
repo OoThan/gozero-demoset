@@ -2,6 +2,8 @@ package logic
 
 import (
 	"context"
+	"go-zero_microservices/mall/service/user/model"
+	"google.golang.org/grpc/status"
 
 	"go-zero_microservices/mall/service/user/rpc/internal/svc"
 	"go-zero_microservices/mall/service/user/rpc/user"
@@ -24,7 +26,20 @@ func NewUserInfoLogic(ctx context.Context, svcCtx *svc.ServiceContext) *UserInfo
 }
 
 func (l *UserInfoLogic) UserInfo(in *user.UserInfoRequest) (*user.UserInfoResponse, error) {
-	// todo: add your logic here and delete this line
+	// check user
+	res, err := l.svcCtx.UserModel.FindOne(l.ctx, in.Id)
+	if err != nil {
+		if err == model.ErrNotFound {
+			return nil, status.Error(100, "user doesn't exist.")
+		}
 
-	return &user.UserInfoResponse{}, nil
+		return nil, status.Error(500, err.Error())
+	}
+
+	return &user.UserInfoResponse{
+		Id:     res.Id,
+		Name:   res.Name,
+		Gender: int32(res.Gender),
+		Mobile: res.Mobile,
+	}, nil
 }

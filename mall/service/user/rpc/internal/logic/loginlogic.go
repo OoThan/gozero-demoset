@@ -2,6 +2,7 @@ package logic
 
 import (
 	"context"
+	"go-zero_microservices/mall/common/cryptx"
 	"go-zero_microservices/mall/service/user/model"
 	"google.golang.org/grpc/status"
 
@@ -35,6 +36,15 @@ func (l *LoginLogic) Login(in *user.LoginRequest) (*user.LoginResponse, error) {
 	}
 
 	// check password
+	password := cryptx.PasswordEncrypt(l.svcCtx.Config.Salt, in.Password)
+	if password != res.Password {
+		return nil, status.Error(100, "wrong password")
+	}
 
-	return &user.LoginResponse{}, nil
+	return &user.LoginResponse{
+		Id:     res.Id,
+		Name:   res.Name,
+		Gender: int32(res.Gender),
+		Mobile: res.Mobile,
+	}, nil
 }

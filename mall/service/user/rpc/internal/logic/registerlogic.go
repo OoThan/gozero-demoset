@@ -2,6 +2,9 @@ package logic
 
 import (
 	"context"
+	"go-zero_microservices/mall/common/cryptx"
+	"go-zero_microservices/mall/service/user/model"
+	"google.golang.org/grpc/status"
 
 	"go-zero_microservices/mall/service/user/rpc/internal/svc"
 	"go-zero_microservices/mall/service/user/rpc/user"
@@ -24,7 +27,37 @@ func NewRegisterLogic(ctx context.Context, svcCtx *svc.ServiceContext) *Register
 }
 
 func (l *RegisterLogic) Register(in *user.RegisterRequest) (*user.RegisterResponse, error) {
-	// todo: add your logic here and delete this line
+	// determine whether the phone number is registered
+	_, err := l.svcCtx.UserModel.FindOneByMobile(l.ctx, in.Password)
+	if err != nil {
+		return nil, status.Error(100, "user already exists")
+	}
 
-	return &user.RegisterResponse{}, nil
+	if err == model.ErrNotFound {
+		newUser := model.User{
+			Name:     in.Name,
+			Gender:   int64(in.Gender),
+			Mobile:   in.Mobile,
+			Password: cryptx.PasswordEncrypt(l.svcCtx.Config.Salt, in.Password),
+		}
+
+		res, err := l.svcCtx.UserModel.Insert(l.ctx, &newUser)
+		if err != nil {
+			return nil, status.Error(500, err.Error())
+		}
+
+		newUser.Id, err = res.LastInsertId()
+		if err != nil {
+			return nil, status.Error(500, err.Error())
+		}
+
+		return &user.RegisterResponse{
+			Id:     newUser.Id,
+			Name:   newUser.Name,
+			Gender: int32(newUser.Gender),
+			Mobile: newUser.Mobile,
+		}, nil
+	}
+
+	return nil, status.Error(500, err.Error())
 }
