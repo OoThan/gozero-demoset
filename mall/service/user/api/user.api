@@ -1,0 +1,59 @@
+syntax = "v1"
+
+info(
+	title: "User Center API"
+	desc: "User Center API"
+	author: "maroo"
+	email: "maroo@gmail.com"
+	version: "1.0"
+)
+
+type (
+	// User Login
+	LoginRequest {
+		Mobile   string `json:"mobile"`
+		Password string `json:"password"`
+	}
+	LoginRespone {
+		AccessToken  string `json:"accessToken"`
+		AccessExpire int64  `json:"accessExpire"`
+	}
+
+	// User Register
+	RegisterRequest {
+		Name     string `json:"name"`
+		Gender   int64  `json:"gender"`
+		Mobile   string `json:"mobile"`
+		Password string `json:"password"`
+	}
+	RegisterResponse {
+		Id     int64  `json:"id"`
+		Name   string `json:"name"`
+		Gender int64  `json:"gender"`
+		Mobile string `json:"mobile"`
+	}
+
+	// User Info
+	UserInfoResponse {
+		Id     int64  `json:"id"`
+		Name   string `json:"name"`
+		Gender int64  `json:"gender"`
+		Mobile string `json:"mobile"`
+	}
+)
+
+service User {
+	@handler Login
+	post /api/user/login (LoginRequest) returns (LoginRespone)
+	
+	@handler Register
+	post /api/user/register (RegisterRequest) returns (RegisterResponse)
+}
+
+@server (
+	jwt: Auth
+)
+service User {
+	@handler UserInfo
+	get /api/user/userinfo returns (UserInfoResponse)
+}
