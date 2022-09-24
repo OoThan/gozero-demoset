@@ -22,13 +22,15 @@ var (
 	payRowsExpectAutoSet   = strings.Join(stringx.Remove(payFieldNames, "`id`", "`create_time`", "`update_time`", "`create_at`", "`update_at`"), ",")
 	payRowsWithPlaceHolder = strings.Join(stringx.Remove(payFieldNames, "`id`", "`create_time`", "`update_time`", "`create_at`", "`update_at`"), "=?,") + "=?"
 
-	cachePayIdPrefix = "cache:pay:id:"
+	cachePayIdPrefix  = "cache:pay:id:"
+	cachePayOidPrefix = "cache:pay:oid:"
 )
 
 type (
 	payModel interface {
 		Insert(ctx context.Context, data *Pay) (sql.Result, error)
 		FindOne(ctx context.Context, id uint64) (*Pay, error)
+		FindOneByOid(ctx context.Context, oid uint64) (*Pay, error)
 		Update(ctx context.Context, data *Pay) error
 		Delete(ctx context.Context, id uint64) error
 	}
@@ -73,6 +75,24 @@ func (m *defaultPayModel) FindOne(ctx context.Context, id uint64) (*Pay, error) 
 		query := fmt.Sprintf("select %s from %s where `id` = ? limit 1", payRows, m.table)
 		return conn.QueryRowCtx(ctx, v, query, id)
 	})
+	switch err {
+	case nil:
+		return &resp, nil
+	case sqlc.ErrNotFound:
+		return nil, ErrNotFound
+	default:
+		return nil, err
+	}
+}
+
+func (m *defaultPayModel) FindOneByOid(ctx context.Context, oid uint64) (*Pay, error) {
+	payOidKey := fmt.Sprintf("%s%v", cachePayOidPrefix, oid)
+	var resp Pay
+	err := m.QueryRow(&resp, payOidKey, func(conn sqlx.SqlConn, v interface{}) error {
+		query := fmt.Sprintf("select %s from %s where `oid` = ? limit 1", payRows, m.table)
+		return conn.QueryRow(v, query, oid)
+	})
+
 	switch err {
 	case nil:
 		return &resp, nil
