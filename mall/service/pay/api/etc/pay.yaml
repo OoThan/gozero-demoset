@@ -1,6 +1,6 @@
-Name: Order
+Name: Pay
 Host: 127.0.0.1
-Port: 18002
+Port: 18003
 
 Mysql:
   DataSource: root:UpTech20@@08@tcp(127.0.0.1:3306)/mall?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
@@ -14,8 +14,8 @@ Auth:
   AccessSecret: hdkfIJKhbfjkhusdOIHDFhfkjdhiuahfdajkhfGHJ
   AccessExpire: 86400
 
-OrderRpc:
+PayRpc:
   Etcd:
     Hosts:
       - 127.0.0.1:2379
-    Key: order.rpc
+    Key: pay.rpc
