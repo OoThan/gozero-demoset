@@ -2,6 +2,8 @@ package logic
 
 import (
 	"context"
+	"go-zero_microservices/mall/service/order/model"
+	"google.golang.org/grpc/status"
 
 	"go-zero_microservices/mall/service/order/rpc/internal/svc"
 	"go-zero_microservices/mall/service/order/rpc/order"
@@ -24,7 +26,20 @@ func NewDetailLogic(ctx context.Context, svcCtx *svc.ServiceContext) *DetailLogi
 }
 
 func (l *DetailLogic) Detail(in *order.DetailRequest) (*order.DetailResponse, error) {
-	// todo: add your logic here and delete this line
+	// order detail
+	res, err := l.svcCtx.OrderModel.FindOne(l.ctx, in.Id)
+	if err != nil {
+		if err == model.ErrNotFound {
+			return nil, status.Error(100, "order not found!")
+		}
+		return nil, status.Error(500, err.Error())
+	}
 
-	return &order.DetailResponse{}, nil
+	return &order.DetailResponse{
+		Id:     res.Id,
+		Pid:    res.Pid,
+		Uid:    res.Uid,
+		Amount: res.Amount,
+		Status: res.Status,
+	}, nil
 }

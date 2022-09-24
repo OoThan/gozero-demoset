@@ -2,6 +2,8 @@ package logic
 
 import (
 	"context"
+	"go-zero_microservices/mall/service/order/model"
+	"google.golang.org/grpc/status"
 
 	"go-zero_microservices/mall/service/order/rpc/internal/svc"
 	"go-zero_microservices/mall/service/order/rpc/order"
@@ -24,7 +26,21 @@ func NewPaidLogic(ctx context.Context, svcCtx *svc.ServiceContext) *PaidLogic {
 }
 
 func (l *PaidLogic) Paid(in *order.PaidRequest) (*order.PaidResponse, error) {
-	// todo: add your logic here and delete this line
+	// order paid
+	res, err := l.svcCtx.OrderModel.FindOne(l.ctx, in.Id)
+	if err != nil {
+		if err == model.ErrNotFound {
+			return nil, status.Error(100, "order not found!")
+		}
+		return nil, status.Error(500, err.Error())
+	}
+
+	res.Status = 1
+
+	err = l.svcCtx.OrderModel.Update(l.ctx, res)
+	if err != nil {
+		return nil, status.Error(500, err.Error())
+	}
 
 	return &order.PaidResponse{}, nil
 }
