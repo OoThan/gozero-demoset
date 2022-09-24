@@ -1,0 +1,73 @@
+syntax = "v1"
+
+info(
+	title: "Order api"
+	desc: "Order service"
+	author: "maroo"
+	email: "maroo@gmail.com"
+	version: "1.0"
+)
+
+type (
+	CreateRequest {
+		Uid    uint64 `json:"uid"`
+		Pid    uint64 `json:"pid"`
+		Amount uint64 `json:"amount"`
+		Status uint64 `json:"status"`
+	}
+	CreateResponse {
+		Id uint64 `json:"id"`
+	}
+
+	UpdateRequset {
+		Id     uint64 `json:"id"`
+		Uid    uint64 `json:"uid"`
+		Pid    uint64 `json:"pid"`
+		Amount uint64 `json:"amount"`
+		Status uint64 `json:"status"`
+	}
+	UpdateResponse struct{}
+
+	RemoveRequest {
+		Id uint64 `json:"id"`
+	}
+	RemoveResponse struct{}
+
+	DetailRequest {
+		Id uint64 `json:"id"`
+	}
+	DetailResponse {
+		Id     uint64 `json:"id"`
+		Uid    uint64 `json:"uid"`
+		Pid    uint64 `json:"pid"`
+		Amount uint64 `json:"amount"`
+		Status uint64 `json:"status"`
+	}
+
+	ListRequset {
+		Uid uint64 `json:"uid"`
+	}
+	ListResponse {
+		List []DetailResponse `json:"list"`
+	}
+)
+
+@server (
+	jwt: Auth
+)
+service Order {
+	@handler Create
+	post /api/order/create (CreateRequest) returns (CreateResponse)
+	
+	@handler Update
+	post /api/order/update (UpdateRequset) returns (UpdateResponse)
+	
+	@handler Remove
+	post /api/order/remove (RemoveRequest) returns (RemoveResponse)
+	
+	@handler Detail
+	post /api/order/detail (DetailRequest) returns (DetailResponse)
+	
+	@handler List
+	post /api/order/list (ListRequset) returns (ListResponse)
+}
