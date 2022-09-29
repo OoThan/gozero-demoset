@@ -1,0 +1,150 @@
+version: '3.8'
+services:
+
+  # redis
+  redisdb:
+    image: redis:alpine
+    ports:
+      - 6378:6379
+    volumes:
+      - redisdata:/data
+
+  # mysql
+  mysqldb:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=UpTech20@@08
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=UpTech20@@08
+      - MYSQL_DATABASE=mall
+    ports:
+      - 3307:3306
+    volumes:
+      - mysqldata:/var/lib/mysql
+
+  # phpmyadmin
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 9002:80
+    environment:
+      - PMA_HOST=mysqldb
+      - PMA_ARBITRARY=1
+      - PMA_PORT=3306
+      - PMA_USER=root
+      - PMA_PASSWORD=UpTech20@@08
+
+  # etcd
+  Etcd:
+    image: bitnami/etcd:latest
+    environment:
+      - ALLOW_NONE_AUTHENTICATION=yes
+      - ETCD_ADVERTISE_CLIENT_URLS=http://etcd:2379
+    ports:
+      - 2378:2379
+      - 2381:2380
+
+  # rpc services
+  # user rpc
+  user-rpc:
+    build:
+      context: ./
+      dockerfile: ./mall/service/user/rpc/Dockerfile
+    image: user-rpc
+    restart: always
+    expose:
+      - 9000
+    volumes:
+      - ./mall/service/user/rpc/etc/:/app/rpc/etc
+
+  # product rpc
+  product-rpc:
+    build:
+      context: ./
+      dockerfile: ./mall/service/product/rpc/Dockerfile
+    image: product-rpc
+    restart: always
+    expose:
+      - 9001
+    volumes:
+      - ./mall/service/product/rpc/etc:/app/rpc/etc
+
+  # order rpc
+  order-rpc:
+    build:
+      context: ./
+      dockerfile: ./mall/service/order/rpc/Dockerfile
+    image: order-rpc
+    restart: always
+    expose:
+      - 9002
+    volumes:
+      - ./mall/service/order/rpc/etc:/app/rpc/etc
+
+  # pay rpc
+  pay-rpc:
+    build:
+      context: ./
+      dockerfile: ./mall/service/pay/rpc/Dockerfile
+    image: pay-rpc
+    restart: always
+    expose:
+      - 9003
+    volumes:
+      - ./mall/service/pay/rpc/etc:/app/rpc/etc
+
+  # api services
+  # user api
+  user-api:
+    build:
+      context: ./
+      dockerfile: ./mall/service/user/api/Dockerfile
+    image: user-api
+    restart: always
+    expose:
+      - 8000
+    volumes:
+      - ./mall/service/user/api/etc:/app/api/etc
+
+  # product api
+  product-api:
+    build:
+      context: ./
+      dockerfile: ./mall/service/product/api/Dockerfile
+    image: product-api
+    restart: always
+    expose:
+      - 18001
+    volumes:
+      - ./mall/service/product/api/etc:/app/api/etc
+
+  # order api
+  order-api:
+    build:
+      context: ./
+      dockerfile: ./mall/service/order/api/Dockerfile
+    image: order-api
+    restart: always
+    expose:
+      - 18002
+    volumes:
+      - ./mall/service/order/api/etc:/app/api/etc
+
+  # pay api
+  pay-api:
+    build:
+      context: ./
+      dockerfile: ./mall/service/pay/api/Dockerfile
+    image: pay-api
+    restart: always
+    expose:
+      - 18003
+    volumes:
+      - ./mall/service/pay/api/etc:/app/api/etc
+
+volumes:
+  redisdata:
+  mysqldata:

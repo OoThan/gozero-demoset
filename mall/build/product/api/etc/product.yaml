@@ -1,0 +1,21 @@
+Name: Product
+Host: 0.0.0.0
+Port: 18001
+
+Mysql:
+  DataSource: root:UpTech20@@08@tcp(127.0.0.1:3306)/mall?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
+
+CacheRedis:
+  - Host: 127.0.0.1:6379
+    Type: node
+    Pass:
+
+Auth:
+  AccessSecret: hdkfIJKhbfjkhusdOIHDFhfkjdhiuahfdajkhfGHJ
+  AccessExpire: 86400
+
+ProductRpc:
+  Etcd:
+    Hosts:
+      - 127.0.0.1:2379
+    Key: product.rpc
