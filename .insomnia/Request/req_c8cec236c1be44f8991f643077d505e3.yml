@@ -1,0 +1,33 @@
+_id: req_c8cec236c1be44f8991f643077d505e3
+type: Request
+parentId: fld_0c05fdfea5aa416482c7491c02e7a40e
+modified: 1664520594329
+created: 1664182414819
+url: 10.10.20.18:8080/v2/note/view
+name: SimpleViewNote
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"note_id": 12478607
+    }
+parameters: []
+headers:
+  - id: pair_1410abcc55d04f62af87cc29c78e5e44
+    name: User-Id
+    value: 50daee99-dbb5-4022-a738-7fd3dee7
+    description: ""
+  - name: Content-Type
+    value: application/json
+    id: pair_8c6f6bebac224089ac7326ba4a7bd34f
+authentication: {}
+metaSortKey: -1664164025001.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

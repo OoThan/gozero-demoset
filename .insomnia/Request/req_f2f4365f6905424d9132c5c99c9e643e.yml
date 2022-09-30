@@ -1,0 +1,29 @@
+_id: req_f2f4365f6905424d9132c5c99c9e643e
+type: Request
+parentId: fld_8fe2caf392da443c858c4bf6cd0a4abb
+modified: 1664161925958
+created: 1663572124266
+url: http://10.10.20.16:8080/v2/app/get-default-coin?sender_id=10047&receiver_id=100
+name: New Request
+description: ""
+method: GET
+body: {}
+parameters: []
+headers:
+  - id: pair_a9a511d0741645719693bbd481ebc5f1
+    name: Content-Type
+    value: application/json
+    description: ""
+  - id: pair_663d99729b8842a8b9b815267add44da
+    name: User-Id
+    value: 06e095bf-984c-4baa-981e-a69a155a
+    description: ""
+authentication: {}
+metaSortKey: -1663572124266
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

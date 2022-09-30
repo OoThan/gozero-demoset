@@ -1,0 +1,33 @@
+_id: req_dc107e6ac8ec43698873ce82a0194e0c
+type: Request
+parentId: fld_c4c2ce56e25643b086031fb4f441cd3d
+modified: 1664184782205
+created: 1664163143704
+url: 10.10.20.16:8080/v2/pucha/place-page
+name: place-page
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"user_hash": "0x6505e2ee5a4223287ac0f91a9a9a37"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_ec9ff04f16db473c8ee9ab7a208f7061
+  - id: pair_936f1f991750485394486eda20bc682f
+    name: User-Id
+    value: 98F6215CEB72889X
+    description: ""
+authentication: {}
+metaSortKey: -1663436214761.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

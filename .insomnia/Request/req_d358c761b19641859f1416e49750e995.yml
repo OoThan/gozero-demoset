@@ -1,0 +1,29 @@
+_id: req_d358c761b19641859f1416e49750e995
+type: Request
+parentId: fld_b997ef4c32b94ab1a64bd7b8321519fa
+modified: 1664340529581
+created: 1664336847979
+url: 10.10.20.16:8080/v2/vod/init
+name: Long Note Init
+description: ""
+method: POST
+body: {}
+parameters: []
+headers:
+  - id: pair_ab780a45d8364837b37ac07df494d254
+    name: User-Id
+    value: "0x6505e2ee5a4223287ac0f91a9a9a37"
+    description: ""
+  - id: pair_1623b1d88a954b1595eda1b90a051096
+    name: Client-Type
+    value: "1"
+    description: ""
+authentication: {}
+metaSortKey: -1664278741799.75
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

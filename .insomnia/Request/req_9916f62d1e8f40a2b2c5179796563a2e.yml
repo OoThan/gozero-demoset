@@ -1,0 +1,38 @@
+_id: req_9916f62d1e8f40a2b2c5179796563a2e
+type: Request
+parentId: fld_c4c2ce56e25643b086031fb4f441cd3d
+modified: 1664366804836
+created: 1664163120200
+url: http://10.10.20.16:8080/v2/user/login-with-password
+name: loginwithPassword
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"user_phone": "13111111111",
+    	"user_password": "000000"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_414a55d39c4b4be0ab386d36a668babc
+  - id: pair_1fd1805b63364251aeac8c6627232a86
+    name: User-Id
+    value: "0x6505e2ee5a4223287ac0f91a9a9a37"
+    description: ""
+  - id: pair_d6c47d68c6d0429589bc57eaaaeaa1cd
+    name: ""
+    value: ""
+    description: ""
+authentication: {}
+metaSortKey: -1663436214711.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

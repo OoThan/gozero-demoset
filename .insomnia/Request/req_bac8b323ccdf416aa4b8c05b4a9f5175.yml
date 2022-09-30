@@ -1,0 +1,32 @@
+_id: req_bac8b323ccdf416aa4b8c05b4a9f5175
+type: Request
+parentId: fld_04ad62684c08473e856bfdc933e1a0cb
+modified: 1663055886155
+created: 1663041543180
+url: http://138.113.2.161:8071/v2/app-upload/simple-upload
+name: New Request
+description: ""
+method: POST
+body:
+  mimeType: multipart/form-data
+  params:
+    - id: pair_7d8cbb56cb604cfead0d91bf02b7ae59
+      name: file
+      value: ""
+      description: ""
+      type: file
+      fileName: /home/luke/Downloads/catto.mp4
+parameters: []
+headers:
+  - name: Content-Type
+    value: multipart/form-data
+    id: pair_d5da291b398241a8bd3a3cac32d74de5
+authentication: {}
+metaSortKey: -1663041543180
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

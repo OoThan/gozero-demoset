@@ -1,0 +1,33 @@
+_id: req_e8f44d455b3844c5a87685168447a641
+type: Request
+parentId: fld_b997ef4c32b94ab1a64bd7b8321519fa
+modified: 1664446572019
+created: 1664278741781
+url: 10.10.20.18:8080/v2/vod/recommend
+name: Long Note Recommend
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"type_id": 1
+    }
+parameters: []
+headers:
+  - id: pair_ab780a45d8364837b37ac07df494d254
+    name: User-Id
+    value: "0x6505e2ee5a4223287ac0f91a9a9a37"
+    description: ""
+  - name: Content-Type
+    value: application/json
+    id: pair_548a99dc286043d797c1cbd249f67cca
+authentication: {}
+metaSortKey: -1664278741781
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

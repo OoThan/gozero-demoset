@@ -1,0 +1,30 @@
+_id: req_e4351fd42fa64dc084c3dcad2ccc8c17
+type: Request
+parentId: fld_d3d5ff56cf734832934781f38c444835
+modified: 1663742119488
+created: 1662714379424
+url: http://localhost:8090/api/auth/login
+name: User Login
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"email": "test11@gmail.com",
+    	"password": "11122233"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_d85e299f4d0a4d44b3bb0f4ebc95c31a
+authentication: {}
+metaSortKey: -1663739045461
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

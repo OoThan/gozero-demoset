@@ -1,0 +1,33 @@
+_id: req_3b5675fd35ea4e7695c2a7801fb83b74
+type: Request
+parentId: fld_8fe2caf392da443c858c4bf6cd0a4abb
+modified: 1664162253211
+created: 1662368424075
+url: localhost:8080/v2/note/user-album-list
+name: user-album-list -note
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"user_hash": "0x6505e2ee5a4223287ac0f91a9a9a37"
+    }	
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_ec9ff04f16db473c8ee9ab7a208f7061
+  - id: pair_936f1f991750485394486eda20bc682f
+    name: User-Id
+    value: 98F6215CEB72889X
+    description: ""
+authentication: {}
+metaSortKey: -1662368424075
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

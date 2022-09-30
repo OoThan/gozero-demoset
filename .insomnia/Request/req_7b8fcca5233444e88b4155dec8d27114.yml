@@ -1,0 +1,35 @@
+_id: req_7b8fcca5233444e88b4155dec8d27114
+type: Request
+parentId: fld_864a5667dab64873963039dbb26d1455
+modified: 1664348698903
+created: 1664273722618
+url: 10.10.20.16:8080/v2/note-comment/do-comment
+name: UserDoAddNoteComment
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"user_token": "c87268f3d0d6a0897f880275553ed5b8",
+    	"note_id": 12478607,
+    	"content": "123 testing"
+    }
+parameters: []
+headers:
+  - id: pair_35afce5d01654dc5afed7c72be9edf73
+    name: User-Id
+    value: "0x6505e2ee5a4223287ac0f91a9a9a37"
+    description: ""
+  - name: Content-Type
+    value: application/json
+    id: pair_9623e887137240c89a2e2988164e4846
+authentication: {}
+metaSortKey: -1664192582512.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

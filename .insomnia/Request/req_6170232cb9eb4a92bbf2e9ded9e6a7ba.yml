@@ -1,0 +1,34 @@
+_id: req_6170232cb9eb4a92bbf2e9ded9e6a7ba
+type: Request
+parentId: fld_8fe2caf392da443c858c4bf6cd0a4abb
+modified: 1664183594595
+created: 1662364133726
+url: http://138.113.1.241:8080/v2/user/login-with-password
+name: login -with-password
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"user_phone": "13111111111",
+    	"user_password": "000000"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_414a55d39c4b4be0ab386d36a668babc
+  - id: pair_1fd1805b63364251aeac8c6627232a86
+    name: User-Id
+    value: 06e095bf-984c-4baa-981e-a69a155a
+    description: ""
+authentication: {}
+metaSortKey: -1662712853621.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

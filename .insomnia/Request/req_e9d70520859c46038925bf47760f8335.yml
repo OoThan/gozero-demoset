@@ -1,0 +1,33 @@
+_id: req_e9d70520859c46038925bf47760f8335
+type: Request
+parentId: fld_c4c2ce56e25643b086031fb4f441cd3d
+modified: 1664182847617
+created: 1664177807646
+url: 10.10.20.16:8080/v2/home/attention
+name: HomeDiscoverNoteList
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"note_type": 2
+    }
+parameters: []
+headers:
+  - id: pair_7efbef8b04ce426a99b8f381bb3ca3ca
+    name: User-Id
+    value: 98F6215CEB72889X
+    description: ""
+  - name: Content-Type
+    value: application/json
+    id: pair_60b5bdea39ed47c2b9939fb972becbd7
+authentication: {}
+metaSortKey: -1664164235118.25
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

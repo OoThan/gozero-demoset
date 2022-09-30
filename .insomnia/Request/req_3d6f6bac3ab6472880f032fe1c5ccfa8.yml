@@ -1,0 +1,36 @@
+_id: req_3d6f6bac3ab6472880f032fe1c5ccfa8
+type: Request
+parentId: fld_864a5667dab64873963039dbb26d1455
+modified: 1664348699283
+created: 1664277050173
+url: 10.10.20.16:8080/v2/note-comment/do-like-comment
+name: UserDo Not LikeNoteComment
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"user_token": "c87268f3d0d6a0897f880275553ed5b8",
+    	"note_id": 12478607,
+    	"parent_comment_id": 2498,
+    	"s_op": -1
+    }
+parameters: []
+headers:
+  - id: pair_35afce5d01654dc5afed7c72be9edf73
+    name: User-Id
+    value: "0x6505e2ee5a4223287ac0f91a9a9a37"
+    description: ""
+  - name: Content-Type
+    value: application/json
+    id: pair_9623e887137240c89a2e2988164e4846
+authentication: {}
+metaSortKey: -1664195940328.1875
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

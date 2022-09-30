@@ -1,0 +1,36 @@
+_id: req_586400e91c1543d9a8eba66e20dd18ee
+type: Request
+parentId: fld_0c05fdfea5aa416482c7491c02e7a40e
+modified: 1664509463418
+created: 1664262236739
+url: 10.10.20.18:8080/v2/home/nearby-note
+name: HomeNearbyNoteList
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |
+    {
+    	"note_type": 2,
+    	"page": 2,
+    	"page_size": 10,
+    	"user_proxy": "39.904987,116.405289"
+    }
+parameters: []
+headers:
+  - id: pair_1410abcc55d04f62af87cc29c78e5e44
+    name: User-Id
+    value: 06e095bf-984c-4baa-981e-a69a155a
+    description: ""
+  - name: Content-Type
+    value: application/json
+    id: pair_2a9d2fa835c04aa7b7942e61212626ca
+authentication: {}
+metaSortKey: -1664164024801.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,34 @@
+_id: req_6e46bf5324e540a3ab124aeb5e86070c
+type: Request
+parentId: fld_0c05fdfea5aa416482c7491c02e7a40e
+modified: 1664367128953
+created: 1664262981168
+url: 10.10.20.16:8080/v2/search/note-list
+name: AppSearchNotes
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"note_type": 2,
+    	"q": "tt"
+    }
+parameters: []
+headers:
+  - id: pair_1410abcc55d04f62af87cc29c78e5e44
+    name: User-Id
+    value: 06e095bf-984c-4baa-981e-a69a155a
+    description: ""
+  - name: Content-Type
+    value: application/json
+    id: pair_8c6f6bebac224089ac7326ba4a7bd34f
+authentication: {}
+metaSortKey: -1664164024751.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

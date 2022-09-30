@@ -1,0 +1,33 @@
+_id: req_5b78bb4ae7cb49f2b98fe025da868b4f
+type: Request
+parentId: fld_c4c2ce56e25643b086031fb4f441cd3d
+modified: 1664270915060
+created: 1664194470849
+url: 10.10.20.16:8080/v2/note/view-topic
+name: SimpleViewTopic
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"topic_id": 1
+    }
+parameters: []
+headers:
+  - id: pair_1410abcc55d04f62af87cc29c78e5e44
+    name: User-Id
+    value: 06e095bf-984c-4baa-981e-a69a155a
+    description: ""
+  - name: Content-Type
+    value: application/json
+    id: pair_8c6f6bebac224089ac7326ba4a7bd34f
+authentication: {}
+metaSortKey: -1663799909639.75
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

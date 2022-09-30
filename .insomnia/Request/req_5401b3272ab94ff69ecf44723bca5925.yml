@@ -1,0 +1,33 @@
+_id: req_5401b3272ab94ff69ecf44723bca5925
+type: Request
+parentId: fld_b997ef4c32b94ab1a64bd7b8321519fa
+modified: 1664351541404
+created: 1664279874834
+url: 10.10.20.16:8080/v2/note/view
+name: Long Note Detail
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |
+    {
+    	"note_id": 12481880
+    }
+parameters: []
+headers:
+  - id: pair_1410abcc55d04f62af87cc29c78e5e44
+    name: User-Id
+    value: 06e095bf-984c-4baa-981e-a69a155a
+    description: ""
+  - name: Content-Type
+    value: application/json
+    id: pair_8c6f6bebac224089ac7326ba4a7bd34f
+authentication: {}
+metaSortKey: -1664249093359.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

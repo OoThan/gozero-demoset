@@ -1,0 +1,40 @@
+_id: req_69037bbdedca4065be6d304ef2eee28e
+type: Request
+parentId: fld_8fe2caf392da443c858c4bf6cd0a4abb
+modified: 1664162057820
+created: 1663057283168
+url: localhost:8080/v2/note/simple-edit
+name: simple edit
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: >-
+    {
+    	"user_id": 100,
+    	"note_id": 12479198,
+    	"note_type": 2,
+    	"note_title": "嘟一下哥哥会来吗？",
+    	"note_cover": "嘟一下哥哥会来吗？",
+    	"note_coin": 1,
+    	"note_media_url": "https://images.chachatest.com/static/vod/20220913/f1c548f4d4a85cb2fdc2ad59cd0f654d.mp4"
+    }
+parameters: []
+headers:
+  - id: pair_d5df56ffcef345b8a0d41fad979d1e39
+    name: Content-Type
+    value: application/json
+    description: ""
+  - id: pair_e0b8d8661ed8471487ca02662247e9a7
+    name: User-Id
+    value: 06e095bf-984c-4baa-981e-a69a155a
+    description: ""
+authentication: {}
+metaSortKey: -1663057283168
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

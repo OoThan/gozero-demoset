@@ -1,0 +1,21 @@
+_id: req_03b2b85b8bf04414a01ad6d5d657b65e
+type: Request
+parentId: fld_b68f647d07fc42aea6b0444fa4de8ed5
+modified: 1662001701542
+created: 1662001682471
+url: http://localhost:8888/from/you
+name: New Request
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1662001682471
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

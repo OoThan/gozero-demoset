@@ -1,0 +1,33 @@
+_id: req_48ee5915e5454cb49d95f9536803343f
+type: Request
+parentId: fld_c4c2ce56e25643b086031fb4f441cd3d
+modified: 1664182849247
+created: 1664165719987
+url: 10.10.20.16:8080/v2/home/discover-category
+name: HomeDiscoverCategoryList
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"note_type": 1
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_6adc680e39ff4fc6b362b3dd39b228e7
+  - id: pair_27fdb243d621404fa2c4f9bae761caa2
+    name: User-Id
+    value: 98F6215CEB72889X
+    description: ""
+authentication: {}
+metaSortKey: -1664165719987
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

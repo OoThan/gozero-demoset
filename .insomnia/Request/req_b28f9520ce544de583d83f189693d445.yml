@@ -1,0 +1,30 @@
+_id: req_b28f9520ce544de583d83f189693d445
+type: Request
+parentId: fld_d3d5ff56cf734832934781f38c444835
+modified: 1663742101067
+created: 1662709363328
+url: http://localhost:8090/api/auth/register
+name: User Register
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"email": "test11@gmail.com",
+    	"password": "11122233"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_a3d4628c3e35475985dd157efb93345d
+authentication: {}
+metaSortKey: -1663739045511
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

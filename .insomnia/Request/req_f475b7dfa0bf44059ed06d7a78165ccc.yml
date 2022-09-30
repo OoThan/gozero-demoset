@@ -1,0 +1,33 @@
+_id: req_f475b7dfa0bf44059ed06d7a78165ccc
+type: Request
+parentId: fld_c4c2ce56e25643b086031fb4f441cd3d
+modified: 1664262228187
+created: 1664163604518
+url: 10.10.20.16:8080/v2/app/recommend-content
+name: AppRecommendContent
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"user_hash": "0x6505e2ee5a4223287ac0f91a9a9a37"
+    }
+parameters: []
+headers:
+  - id: pair_1410abcc55d04f62af87cc29c78e5e44
+    name: User-Id
+    value: 98F6215CEB72889X
+    description: ""
+  - name: Content-Type
+    value: application/json
+    id: pair_2f32efc259ac4cc88bf0c711a7ee8b1b
+authentication: {}
+metaSortKey: -1664163604518
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

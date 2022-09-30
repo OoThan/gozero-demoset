@@ -1,0 +1,36 @@
+_id: req_122364f9822a48f58fb739bd60f09326
+type: Request
+parentId: fld_0c05fdfea5aa416482c7491c02e7a40e
+modified: 1664454431517
+created: 1664166337321
+url: 10.10.20.18:8080/v2/home/discover-note
+name: HomeDiscoverNoteList
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"category_id": 0,
+    	"group_id": 1,
+    	"topic_id": 1,
+    	"page": 1,
+    	"page_size": 10
+    }
+parameters: []
+headers:
+  - id: pair_7efbef8b04ce426a99b8f381bb3ca3ca
+    name: User-Id
+    value: "0x6505e2ee5a4223287ac0f91a9a9a37"
+    description: ""
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1664164024901.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

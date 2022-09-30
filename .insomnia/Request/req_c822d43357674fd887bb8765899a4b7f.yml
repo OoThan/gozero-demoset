@@ -1,0 +1,33 @@
+_id: req_c822d43357674fd887bb8765899a4b7f
+type: Request
+parentId: fld_b997ef4c32b94ab1a64bd7b8321519fa
+modified: 1664337017130
+created: 1664279223971
+url: 10.10.20.16:8080/v2/home/discover-category
+name: Long Note CategoryList
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"note_type": 2
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_6adc680e39ff4fc6b362b3dd39b228e7
+  - id: pair_27fdb243d621404fa2c4f9bae761caa2
+    name: User-Id
+    value: 06e095bf-984c-4baa-981e-a69a155a
+    description: ""
+authentication: {}
+metaSortKey: -1664263917595.25
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

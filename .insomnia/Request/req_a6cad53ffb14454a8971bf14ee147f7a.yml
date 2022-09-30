@@ -1,0 +1,34 @@
+_id: req_a6cad53ffb14454a8971bf14ee147f7a
+type: Request
+parentId: fld_8fe2caf392da443c858c4bf6cd0a4abb
+modified: 1664162057213
+created: 1663562529710
+url: localhost:8080/v2/pucha/chat-by
+name: New Request
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"user_token": "5b2483e5d1bdf430f459df3c17cc7e3f",
+    	"amount": "20"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_4dead479d8cd410581897e09973e39f0
+  - id: pair_a4f300a61e2942379b8297b610f914c7
+    name: User-Id
+    value: 06e095bf-984c-4baa-981e-a69a155a
+    description: ""
+authentication: {}
+metaSortKey: -1663562529710
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

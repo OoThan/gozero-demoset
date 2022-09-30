@@ -1,0 +1,21 @@
+_id: req_7650c34e9b92498487f0b9dfa01f1e0a
+type: Request
+parentId: fld_fc0655b6ef604904b5000eab9dd4f61e
+modified: 1662016466625
+created: 1662016379352
+url: http://localhost:8888/api/order/get/1
+name: New Request
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1662016379352
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

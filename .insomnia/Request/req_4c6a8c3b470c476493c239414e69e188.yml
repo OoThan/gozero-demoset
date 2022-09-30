@@ -1,0 +1,32 @@
+_id: req_4c6a8c3b470c476493c239414e69e188
+type: Request
+parentId: fld_04ad62684c08473e856bfdc933e1a0cb
+modified: 1663040634457
+created: 1662968093984
+url: http://127.0.0.1:8070/v2/app-upload/simple-upload
+name: New Request
+description: ""
+method: POST
+body:
+  mimeType: multipart/form-data
+  params:
+    - id: pair_ab29ccdab0804c3cad74a290dd0d6404
+      name: file
+      value: ""
+      description: ""
+      type: file
+      fileName: /home/luke/Downloads/11.mp4
+parameters: []
+headers:
+  - name: Content-Type
+    value: multipart/form-data
+    id: pair_66c6b7dd49134eb7b00241903217e7d3
+authentication: {}
+metaSortKey: -1662968093984
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
