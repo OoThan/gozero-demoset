@@ -1,7 +1,7 @@
 _id: req_f00f3d29d9f14e9391d76a1080277077
 type: Request
 parentId: fld_0c05fdfea5aa416482c7491c02e7a40e
-modified: 1664440997259
+modified: 1664601322018
 created: 1664364633619
 url: 10.10.20.18:8080/v2/home/attention
 name: Attention
@@ -11,6 +11,7 @@ body:
   mimeType: application/json
   text: |-
     {
+    	"data_type": 0,
     	"page": 1,
     	"page_size": 4
     }
